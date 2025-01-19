@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venkata Karthik - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f3f4f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin: 0.5rem;
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #4facfe;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #4facfe;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .skills ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding: 0;
+        }
+
+        .skills ul li {
+            background-color: #e2e8f0;
+            margin: 0.5rem 0;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-size: 1.1rem;
+        }
+
+        .projects {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+            gap: 2rem;
+            justify-content: space-between; /* Distribute space evenly */
+        }
+
+        .project {
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            flex: 1 1 calc(33.333% - 2rem); /* Ensure 3 columns by default */
+            max-width: calc(33.333% - 2rem);
+            transition: transform 0.3s;
+            margin-bottom: 2rem; /* Space between rows */
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+        }
+
+        .project img {
+            width: 100%;
+            height: auto;
+        }
+
+        .project h3 {
+            font-size: 1.5rem;
+            margin: 2rem;
+        }
+
+        .project p {
+            margin: 0 1rem 1rem;
+            font-size: 1rem;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contact button {
+            background-color: #4facfe;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact button:hover {
+            background-color: #00f2fe;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+            margin-top: 2rem;
+        }
+       
+
+        @media (max-width: 768px) {
+            .project {
+                flex: 1 1 calc(50% - 1rem);
+                max-width: calc(50% - 1rem);
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            nav a {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Venkata Karthik</h1>
+        <p>Full Stack Developer | Angular | .NET Core | SQL | Oracle</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <section id="about" class="section about">
+            <h2>About Me</h2>
+            <p>Highly-motivated employee with 3.10+ years of Proven experience as a Software Engineer with a focus on Frontend development, specifically using Angular using TypeScript and .NET Web API, .NET Core Web API in Backend.</p>
+            <p>Adept at working effectively unsupervised and quickly mastering new skills. Desire to take on new challenges and to learn new technologies.</p>
+        </section>
+
+        <section id="skills" class="section skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>C#</li>
+                <li>TypeScript</li>
+                <li>Angular</li>
+                <li>ADO.NET Framework</li>
+                <li>.NET Entity Framework</li>
+                <li>SQL Server</li>
+                <li>JavaScript</li>
+                <li>Bootstrap</li>
+                <li>PL/SQL Oracle</li>
+                <li>.NET Core Web API</li>
+            </ul>
+        </section>
+
+        <section id="projects" class="section projects">
+            <h2>Projects</h2>
+            <div class="row">
+            <div class="project">
+                <h3>Administrative Management System</h3>
+                <p>Developed a clinic management system, canteen system, visitor management, and ID card system ensuring efficient workflow and report generation.</p>
+            </div>
+            <div class="project">
+                <h3>User Grievance Management System</h3>
+                <p>Streamlined e-ticketing and grievance management with robust confidentiality and data security mechanisms.</p>
+            </div>
+            <div class="project">
+                <h3>IT Management Board</h3>
+                <p>Created IT inventory management and troubleshooting platforms with enhanced accessibility and performance tracking.</p>
+            </div>
+        </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <h2>Contact Me</h2>
+           <!--  <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form> -->
+            <p><strong>Location:</strong> Kadapa, Andhra Pradesh, India</p>
+           <!--  <p><strong>Phone:</strong> +91-8978242264</p> -->
+            <p><strong>Email:</strong> <a href="mailto:venkatkarthikumar@gmail.com">venkatkarthikumar@gmail.com</a></p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Venkata Karthik. All rights reserved.</p>
+    </footer>
+</body>
+</html>
