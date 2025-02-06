@@ -38,18 +38,20 @@
         nav {
             display: flex;
             justify-content: center;
-            margin: 2rem 0;
-            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding: 1rem;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         nav a {
             text-decoration: none;
             color: #333;
-            margin: 0.5rem;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
             padding: 0.5rem 1rem;
             border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
+            transition: background 0.3s, color 0.3s;
         }
 
         nav a:hover {
@@ -85,86 +87,80 @@
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            padding: 0;
         }
 
         .skills ul li {
             background-color: #e2e8f0;
-            margin: 0.5rem 0;
-            padding: 0.5rem 1rem;
+            padding: 0.7rem 1rem;
             border-radius: 5px;
             font-size: 1.1rem;
+            font-weight: bold;
         }
 
-        .projects {
-            display: flex;
-            flex-wrap: wrap; /* Allow wrapping for smaller screens */
-            gap: 2rem;
-            justify-content: space-between; /* Distribute space evenly */
-        }
+        /* Horizontal Scrollable Projects */
+        .projects-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
 
-        .project {
-            background-color: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
-            flex: 1 1 calc(33.333% - 2rem); /* Ensure 3 columns by default */
-            max-width: calc(33.333% - 2rem);
-            transition: transform 0.3s;
-            margin-bottom: 2rem; /* Space between rows */
-        }
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Auto-fit to adjust responsiveness */
+    gap: 2rem; /* Spacing between projects */
+    max-width: 1200px; /* Limit width to prevent over-expansion */
+    width: 100%;
+}
 
-        .project:hover {
-            transform: translateY(-10px);
-        }
+.project {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 1.5rem;
+    transition: transform 0.3s;
+    text-align: center; /* Center title */
+}
 
-        .project img {
-            width: 100%;
-            height: auto;
-        }
+.project:hover {
+    transform: translateY(-10px);
+}
 
-        .project h3 {
-            font-size: 1.5rem;
-            margin: 2rem;
-        }
+.project h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
 
-        .project p {
-            margin: 0 1rem 1rem;
-            font-size: 1rem;
-        }
+.project p {
+    font-size: 1rem;
+    text-align: justify; /* Ensures content is clear and readable */
+    margin: 0 auto;
+    max-width: 90%;
+    line-height: 1.5;
+}
 
+
+        /* Contact Section */
         .contact {
             text-align: center;
         }
 
-        .contact form {
-            max-width: 600px;
-            margin: 0 auto;
+        .contact p {
+            font-size: 1.1rem;
         }
 
-        .contact input, .contact textarea {
-            width: 100%;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+        .contact a {
+            color: #4facfe;
+            font-weight: bold;
+            text-decoration: none;
         }
 
-        .contact button {
-            background-color: #4facfe;
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            font-size: 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+        .contact a:hover {
+            text-decoration: underline;
         }
 
-        .contact button:hover {
-            background-color: #00f2fe;
-        }
-
+        /* Footer */
         footer {
             text-align: center;
             padding: 1rem;
@@ -172,16 +168,37 @@
             color: white;
             margin-top: 2rem;
         }
-       
 
+        /* Scrollbar Styling */
+        .projects-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .projects-container::-webkit-scrollbar-thumb {
+            background: #4facfe;
+            border-radius: 10px;
+        }
+
+        .projects-container::-webkit-scrollbar-track {
+            background: #e2e8f0;
+            border-radius: 10px;
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
             .project {
-                flex: 1 1 calc(50% - 1rem);
-                max-width: calc(50% - 1rem);
+                min-width: 280px;
+                max-width: 280px;
             }
 
             header h1 {
                 font-size: 2.5rem;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                justify-content: center;
             }
 
             nav a {
@@ -190,11 +207,6 @@
         }
 
         @media (max-width: 480px) {
-            .project {
-                flex: 1 1 100%;
-                max-width: 100%;
-            }
-
             header h1 {
                 font-size: 2rem;
             }
@@ -203,8 +215,9 @@
                 flex-direction: column;
             }
 
-            nav a {
-                margin: 0.5rem 0;
+            .project {
+                min-width: 100%;
+                max-width: 100%;
             }
         }
     </style>
@@ -212,7 +225,8 @@
 <body>
     <header>
         <h1>Venkata Karthik</h1>
-        <p>Full Stack Developer | Angular | .NET Core | SQL | Oracle</p>
+        <p>Full Stack Developer</p>
+        <p>Angular | .NET Core | SQL</p>
     </header>
 
     <nav>
@@ -225,8 +239,7 @@
     <div class="container">
         <section id="about" class="section about">
             <h2>About Me</h2>
-            <p>Highly-motivated employee with 3.10+ years of Proven experience as a Software Engineer with a focus on Frontend development, specifically using Angular using TypeScript and .NET Web API, .NET Core Web API in Backend.</p>
-            <p>Adept at working effectively unsupervised and quickly mastering new skills. Desire to take on new challenges and to learn new technologies.</p>
+            <p>Highly-motivated employee with 3.11+ years of Proven experience as a Software Engineer with a focus on Frontend development, specifically using Angular using TypeScript and .NET Web API, .NET Core Web API in Backend and Database is SQL. Desire to take on new challenges and to learn new technologies. Adept at working effectively unsupervised and quickly mastering new skills.</p>
         </section>
 
         <section id="skills" class="section skills">
@@ -234,40 +247,43 @@
             <ul>
                 <li>C#</li>
                 <li>TypeScript</li>
-                <li>Angular</li>
-                <li>ADO.NET Framework</li>
-                <li>.NET Entity Framework</li>
-                <li>SQL Server</li>
                 <li>JavaScript</li>
-                <li>Bootstrap</li>
-                <li>MySQL</li>
+                <li>Angular</li>
+                <li>Angular Material</li>
                 <li>.NET Core Web API</li>
+                <li>.NET Web API</li>
+                <li>ADO.NET</li>
+                <li>Entity Framework</li>
+                <li>EF Core</li>
+                <li>SQL Server</li>
+                <li>MySQL</li>
+                <li>PL/ SQL Oracle</li>
+                
             </ul>
         </section>
 
-        <section id="projects" class="section projects">
+        <section id="projects" class="section">
             <h2>Projects</h2>
-            <div class="row">
-            <div class="project">
-                <h3>Administrative Management System</h3>
-                <p>Developed a clinic management system, canteen system, visitor management, and ID card system ensuring efficient workflow and report generation.</p>
+            <div class="projects-container">
+                <div class="projects">
+                    <div class="project">
+                        <h3>Administrative Management System</h3>
+                        <p>Developed a clinic management system, canteen system, visitor management, and ID card system ensuring efficient workflow and report generation.</p>
+                    </div>
+                    <div class="project">
+                        <h3>User Grievance Management</h3>
+                        <p>Streamlined e-ticketing and grievance management with robust confidentiality and data security mechanisms.</p>
+                    </div>
+                    <div class="project">
+                        <h3>IT Management Board</h3>
+                        <p>Created IT inventory management and troubleshooting platforms with enhanced accessibility and performance tracking.</p>
+                    </div>
+                </div>
             </div>
-            <div class="project">
-                <h3>User Grievance Management System</h3>
-                <p>Streamlined e-ticketing and grievance management with robust confidentiality and data security mechanisms.</p>
-            </div>
-            <div class="project">
-                <h3>IT Management Board</h3>
-                <p>Created IT inventory management and troubleshooting platforms with enhanced accessibility and performance tracking.</p>
-            </div>
-        </div>
         </section>
 
         <section id="contact" class="section contact">
             <h2>Contact Me</h2>
-         
-            <p><strong>Location:</strong> Kadapa, Andhra Pradesh, India</p>
-         
             <p><strong>Email:</strong> <a href="mailto:venkatkarthikumar@gmail.com">venkatkarthikumar@gmail.com</a></p>
         </section>
     </div>
