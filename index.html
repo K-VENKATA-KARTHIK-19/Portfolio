@@ -3,342 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venkata Karthik - Portfolio</title>
+    <title>Venkata Karthik | Portfolio</title>
     <style>
+        /* Reset and base styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
         }
 
         body {
-            background-color: #f3f4f6;
-            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        a {
+            color: #0077cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Layout containers */
+        header, footer, nav, section {
+            padding: 1rem 2rem;
+            max-width: 1100px;
+            margin: auto;
         }
 
         header {
-            background: linear-gradient(90deg, #4facfe, #00f2fe);
-            color: white;
-            padding: 2rem 0;
+            background-color: #1e293b;
+            color: #fff;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem 2rem;
+            border-radius: 0 0 20px 20px;
         }
 
         header h1 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             margin-bottom: 0.5rem;
         }
 
         header p {
-            font-size: 1.5rem;
+            font-size: 1.1rem;
+            opacity: 0.85;
         }
 
         nav {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            padding: 1rem;
-            background: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            flex-wrap: wrap;
+            background-color: #0f172a;
+            border-radius: 0 0 10px 10px;
         }
 
         nav a {
-            text-decoration: none;
-            color: #333;
-            font-size: 1.1rem;
+            padding: 0.8rem 1rem;
+            color: #f1f5f9;
             font-weight: bold;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            transition: background 0.3s, color 0.3s;
+            transition: background 0.3s;
         }
 
         nav a:hover {
-            background-color: #4facfe;
-            color: white;
+            background-color: #334155;
+            border-radius: 5px;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+        section {
+            background: #fff;
+            margin-top: 2rem;
             padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
-        .section {
-            margin-bottom: 4rem;
-        }
-
-        .section h2 {
+        .section-title {
             font-size: 2rem;
+            color: #0f172a;
             margin-bottom: 1rem;
-            border-bottom: 2px solid #4facfe;
-            display: inline-block;
-            padding-bottom: 0.5rem;
-        }
-        .section h3 {
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #4facfe;
-            display: inline-block;
-            padding-bottom: 0.5rem;
-        }
-        .about p {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
+            border-left: 5px solid #0077cc;
+            padding-left: 0.5rem;
         }
 
-        .skills ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
+        ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
         }
 
-        .skills ul li {
-            background-color: #e2e8f0;
-            padding: 0.7rem 1rem;
-            border-radius: 5px;
-            font-size: 1.1rem;
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .experience, .project {
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-title, .project-title {
+            font-size: 1.2rem;
             font-weight: bold;
-        }
-        .certificate ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: #1e3a8a;
         }
 
-        .certificate ul li {
-            background-color: #e2e8f0;
-            padding: 0.7rem 1rem;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            font-weight: bold;
-        }
-        /* Horizontal Scrollable Projects */
-        .projects-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-}
-
-.projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Auto-fit to adjust responsiveness */
-    gap: 2rem; /* Spacing between projects */
-    max-width: 1200px; /* Limit width to prevent over-expansion */
-    width: 100%;
-}
-
-.project {
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    padding: 1.5rem;
-    transition: transform 0.3s;
-    text-align: center; /* Center title */
-}
-
-.project:hover {
-    transform: translateY(-10px);
-}
-
-.project h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-.project p {
-    font-size: 1rem;
-    text-align: justify; /* Ensures content is clear and readable */
-    margin: 0 auto;
-    max-width: 90%;
-    line-height: 1.5;
-}
-
-
-        /* Contact Section */
-        .contact {
-            text-align: center;
-        }
-
-        .contact p {
-            font-size: 1.1rem;
-        }
-
-        .contact a {
-            color: #4facfe;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .contact a:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer */
         footer {
             text-align: center;
+            background: #1e293b;
+            color: #cbd5e1;
             padding: 1rem;
-            background-color: #333;
-            color: white;
             margin-top: 2rem;
+            border-radius: 10px 10px 0 0;
         }
 
-        /* Scrollbar Styling */
-        .projects-container::-webkit-scrollbar {
-            height: 8px;
+        footer a {
+            color: #38bdf8;
         }
 
-        .projects-container::-webkit-scrollbar-thumb {
-            background: #4facfe;
-            border-radius: 10px;
-        }
-
-        .projects-container::-webkit-scrollbar-track {
-            background: #e2e8f0;
-            border-radius: 10px;
-        }
-
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 768px) {
-            .project {
-                min-width: 280px;
-                max-width: 280px;
-            }
-
-            header h1 {
-                font-size: 2.5rem;
-            }
-
-            nav {
-                flex-wrap: wrap;
-                gap: 0.5rem;
-                justify-content: center;
-            }
-
-            nav a {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 2rem;
-            }
-
             nav {
                 flex-direction: column;
-            }
-
-            .project {
-                min-width: 100%;
-                max-width: 100%;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Venkata Karthik Kompala</h1>
-        <p>Full Stack Developer</p>
+        <h1>Venkata Karthik</h1>
+        <p>Full Stack Developer </p>
         <p>Angular TS | .NET  | SQL</p>
     </header>
-
     <nav>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
         <a href="#certificate">Achievements</a>
         <a href="#contact">Contact</a>
     </nav>
 
-    <div class="container">
-        <section id="about" class="section about">
-            <h2>About Me</h2>
-            <p>Full Stack Developer with over 4 years of experience specializing in front-end development with Angular (TypeScript) and back-end services using .NET Core Web API. Proficient in building secure, scalable web applications and enterprise systems, with hands-on experience in SQL Server and Oracle databases. Demonstrates strong problem-solving skills, an eagerness to learn new technologies, and a track record of delivering robust, maintainable code within fast-paced development environments.</p>
-            <h3>Professional Experience </h3>
-    <p>Working as a software engineer in <strong>Apache Footwear India PVT LTD</strong> from March-2021 to till date.</p>
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p>Full Stack Developer with over 4 years of experience specializing in front-end development with Angular (TypeScript) and back-end services using .NET Core Web API. Proficient in building secure, scalable web applications and enterprise systems, with hands-on experience in SQL Server and Oracle databases. Demonstrates strong problem-solving skills, an eagerness to learn new technologies, and a track record of delivering robust, maintainable code within fast-paced development environments.</p>
+    </section>
 
-            <p><strong>Roles and Responsibilities</strong></p>
- <p>✔ Working as a team member, understanding tasks, analyzing, and implementing.</p>
- <p>✔ Design UI and Consume Web API, writing code to bind data to the UI using Angular.</p>
- <p>✔ Bug fixing and writing code for new forms and pages.</p>
- <p>✔ Ability to understand any problem statement and effectively provide solutions.</p>
- <p>✔ Helping team members to achieve their technical tasks.</p>
+    <section id="skills">
+        <h2 class="section-title">Skills</h2>
+        <ul>
+            <li><strong>Frontend:</strong> Angular using TypeScript, Bootstrap, Angular Material, JavaScript</li>
+            <li><strong>Backend:</strong> .NET Core Web API, ADO.NET Framework, .NET EF Core</li>
+            <li><strong>Database:</strong> SQL Server, PL/SQL (Oracle)</li>
+            <li><strong>Others:</strong> C#, Responsive Design, Report Generation (Excel/PDF)</li>
+        </ul>
+    </section>
 
-        </section>
-        
-        <section id="skills" class="section skills">
-            <h2>Skills</h2>
+    <section id="experience">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="experience">
+            <p class="experience-title">Software Engineer - Apache Footwear India Pvt. Ltd. (Mar 2021 - Present)</p>
             <ul>
-                <li>C#</li>
-                <li>TypeScript</li>
-                <li>JavaScript</li>
-                <li>Angular</li>
-                <li>Angular Material</li>
-                <li>.NET Core Web API</li>
-                <li>.NET Web API</li>
-                <li>ADO.NET</li>
-                <li>Entity Framework</li>
-                <li>EF Core</li>
-                <li>SQL Server</li>
-                <li>MySQL</li>
-                <li>PL/ SQL Oracle</li>
-                
+                <li>Collaborated with team members to develop and maintain various management systems.</li>
+                <li>Designed intuitive user interfaces using Angular and TypeScript.</li>
+                <li>Implemented secure backend workflows with .NET Core Web API.</li>
+                <li>Debugged and resolved application issues efficiently.</li>
             </ul>
-        </section>
-
-        <section id="projects" class="section">
-            <h2>Projects</h2>
-            <div class="projects-container">
-                <div class="projects">
-                    <div class="project">
-                        <h3>Administrative Management System</h3>
-                        <p>Developed a clinic management system, canteen system, visitor management, and ID card system, ensuring efficient workflow and report generation.</p>
-                    </div>
-                    <div class="project">
-                        <h3>User Grievance Management</h3>
-                        <p>Streamlined e-ticketing and grievance management with robust confidentiality and data security mechanisms.</p>
-                    </div>
-                    <div class="project">
-                        <h3>IT Management Board</h3>
-                        <p>Created IT inventory management and troubleshooting platforms with enhanced accessibility and performance tracking.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="certificate" class="section certificate">
-            <h2>View Certificates</h2>
+            <p><strong>Roles and Responsibilities:</strong></p>
             <ul>
-                <li><a href="https://www.hackerrank.com/certificates/bfa1fdda1453" target="_blank">JavaScript (Intermediate)</a></li>
-                <li><a href="https://www.mygreatlearning.com/certificate/HSRAMFHT" target="_blank">Angular7 for Beginners</a></li>
-                <li><a href="https://www.hackerrank.com/certificates/5ead8f881191" target="_blank">Angular (Basic) </a></li>
-                <li><a href="https://www.hackerrank.com/certificates/f1eb165ce118" target="_blank">Angular (Intermediate) </a></li>
-                <li><a href="https://www.hackerrank.com/certificates/4997f66cfaa5" target="_blank">Rest API (Intermediate) </a></li>
-                <li><a href="https://freecodecamp.org/certification/fcc573d0406-028b-44d3-b9dd-f4acf76e3a98/foundational-c-sharp-with-microsoft" target="_blank">Foundational C# with Microsoft</a></li>
-                <li><a href="https://www.hackerrank.com/certificates/5e0ad37e168d" target="_blank">SQL (Intermediate)</a></li>
-                <li><a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/prBZoAihniNijyD6d/oX6f9BbCL9kJDJzfg_prBZoAihniNijyD6d_mL23HzkLec2PDrnYL_1738728722185_completion_certificate.pdf" target="_blank">Walmart USA - Advanced Software Engineering Job Simulation</a></li>
-                <li><a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/j43dGscQHtJJ57N54/a77WE3de8qrxWferQ_j43dGscQHtJJ57N54_mL23HzkLec2PDrnYL_1742381050683_completion_certificate.pdf" target="_blank">Electronic Arts - Software Engineering Job Simulation</a></li>
-                <li><a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_mL23HzkLec2PDrnYL_1738645225894_completion_certificate.pdf" target="_blank">Deloitte Australia - Data Analytics Job Simulation</a></li>
-                <li><a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/4sLyCPgmsy8DA6Dh3/a87GpgE6tiku7q3gu_4sLyCPgmsy8DA6Dh3_mL23HzkLec2PDrnYL_1738648575191_completion_certificate.pdf" target="_blank">PwC Switzerland - Power BI Job Simulation</a></li>
-                <li><a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Accenture%20North%20America/hzmoNKtzvAzXsEqx8_Accenture%20North%20America_mL23HzkLec2PDrnYL_1728905935452_completion_certificate.pdf" target="_blank">Accenture North America - Data Analytics and Visualization Job Simulation</a></li>
-                
-                
+                <li>Working as a team member, understanding tasks, analyzing, and implementing.</li>
+                <li>Design UI and Consume Web API, writing code to bind data to the UI using Angular.</li>
+                <li>Bug fixing and writing code for new forms and pages.</li>
+                <li>Ability to understand any problem statement and effectively provide solutions.</li>
+                <li>Helping team members to achieve their technical tasks.</li>
             </ul>
-        </section>
-        <section id="contact" class="section contact">
-            <h2>Contact Me</h2>
-            <p><strong>Email:</strong> <a href="mailto:venkatkarthikumar@gmail.com">venkatkarthikumar@gmail.com</a></p>
-            <p><strong>Location : Kadapa, Andhra Pradesh, India</strong></p>
-        </section>
-    </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="project">
+            <p class="project-title">Administrative Management System</p>
+            <ul>
+                <li>Developed dashboards for Clinic, Canteen, Visitor, and Business Travel Management Systems.</li>
+                <li>Integrated RFID and QR code scanning for tracking and validation purposes.</li>
+                <li>Automated report generation in Excel and PDF formats, enhancing security and record-keeping.</li>
+            </ul>
+        </div>
+        <div class="project">
+            <p class="project-title">User Grievance Management System</p>
+            <ul>
+                <li>Built e-ticketing and centralized grievance platforms for issue reporting and resolution.</li>
+                <li>Enhanced confidentiality and data integrity with secure data management solutions.</li>
+            </ul>
+        </div>
+        <div class="project">
+            <p class="project-title">IT Management Board</p>
+            <ul>
+                <li>Developed tools for managing IT inventory and troubleshooting IT issues.</li>
+                <li>Implemented performance tracking and multilingual support (English and Chinese).</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        <ul>
+            <li><strong>Audisankara College of Engineering and Technology, Gudur (2014 - 2018):</strong> B.Tech in ECE (71.99%)</li>
+            <li><strong>Narayana Junior College, Kadapa (2012 - 2014):</strong> Intermediate, MPC (77.6%)</li>
+            <li><strong>Pushpagiri High School, Kadapa (2011 - 2012):</strong> SSC (8.7 CGPA)</li>
+        </ul>
+    </section>
+
+    <section id="certificate">
+        <h2 class="section-title">Achievements</h2>
+        <ul>
+            <li><a href="https://www.hackerrank.com/certificates/bfa1fdda1453" target="_blank">JavaScript (Intermediate)</a></li>
+            <li><a href="https://www.mygreatlearning.com/certificate/HSRAMFHT" target="_blank">Angular7 for Beginners</a></li>
+            <li><a href="https://www.hackerrank.com/certificates/5ead8f881191" target="_blank">Angular (Basic)</a></li>
+            <li><a href="https://www.hackerrank.com/certificates/f1eb165ce118" target="_blank">Angular (Intermediate)</a></li>
+            <li><a href="https://www.hackerrank.com/certificates/4997f66cfaa5" target="_blank">Rest API (Intermediate)</a></li>
+            <li><a href="https://freecodecamp.org/certification/fcc573d0406-028b-44d3-b9dd-f4acf76e3a98/foundational-c-sharp-with-microsoft" target="_blank">Foundational C# with Microsoft</a></li>
+            <li><a href="https://www.hackerrank.com/certificates/5e0ad37e168d" target="_blank">SQL (Intermediate)</a></li>
+            <li><a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/prBZoAihniNijyD6d/oX6f9BbCL9kJDJzfg_prBZoAihniNijyD6d_mL23HzkLec2PDrnYL_1738728722185_completion_certificate.pdf" target="_blank">Walmart USA - Advanced Software Engineering Job Simulation</a></li>
+            <li><a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/j43dGscQHtJJ57N54/a77WE3de8qrxWferQ_j43dGscQHtJJ57N54_mL23HzkLec2PDrnYL_1742381050683_completion_certificate.pdf" target="_blank">Electronic Arts - Software Engineering Job Simulation</a></li>
+            <li><a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_mL23HzkLec2PDrnYL_1738645225894_completion_certificate.pdf" target="_blank">Deloitte Australia - Data Analytics Job Simulation</a></li>
+            <li><a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/4sLyCPgmsy8DA6Dh3/a87GpgE6tiku7q3gu_4sLyCPgmsy8DA6Dh3_mL23HzkLec2PDrnYL_1738648575191_completion_certificate.pdf" target="_blank">PwC Switzerland - Power BI Job Simulation</a></li>
+            <li><a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Accenture%20North%20America/hzmoNKtzvAzXsEqx8_Accenture%20North%20America_mL23HzkLec2PDrnYL_1728905935452_completion_certificate.pdf" target="_blank">Accenture North America - Data Analytics and Visualization Job Simulation</a></li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <p><strong>Location:</strong> Kadapa, Andhra Pradesh, India</p>
+        <p><strong>Email:</strong> <a href="mailto:venkatkarthikumar@gmail.com">venkatkarthikumar@gmail.com</a></p>
+    </section>
 
     <footer>
-        <p>&copy; 2025 Venkata Karthik. All rights reserved.</p>
+        <p>&copy; 2025 Venkata Karthik. All rights reserved. | Designed with HTML & CSS</p>
     </footer>
 </body>
 </html>
